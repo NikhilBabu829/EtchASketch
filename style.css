@@ -14,4 +14,12 @@ body{
     width: 320px;
     height: 320px;
     border: 2px solid gold;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+div{
+    width: 20px;
+    height: 20px;
+    background-color: white;
 }
