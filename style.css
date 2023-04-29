@@ -12,18 +12,14 @@ body{
     gap: 5%;
 }
 .main{
-    width: 320px;
-    height: 320px;
+    width: 420px;
+    height: 420px;
     border: 2px solid gold;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    overflow: hidden;
 }
 
-div{
-    width: 20px;
-    height: 20px;
-    background-color: white;
-}
 .options{
     width: 10%;
     height: 30%;

@@ -12,20 +12,44 @@ const input = document.querySelector('.inputRange')
 
 click = true
 
+globalSize = 16
+
 const gridSizing = (size)=>{
+    console.log(parseInt(420/size))
     for(let i=0;i<size;i++){
         for(let j=0;j<size;j++){
             const newDiv = document.createElement('div')
+            newDiv.setAttribute("style",`width : ${parseFloat(420/size)}px`,`height : ${parseFloat(420/size)}px`,"backgroundColor : 'white")
+            newDiv.style.width = `${parseFloat(420/size)}px`
+            newDiv.style.height = `${parseFloat(420/size)}px`
+            newDiv.style.backgroundColor = 'white'
             main.appendChild(newDiv)
         }
     }
 }
 
-gridSizing(16)
+const clearingAllDivs = ()=>{
+    const div = document.querySelectorAll('div')
+    div.forEach((d)=>{
+        d.remove()
+    })
+}
 
-const div = document.querySelectorAll('div')
+input.addEventListener('input',()=>{
+    if(input.value !== globalSize){
+        if(input.value > 64){
+            return alert('Max Limit is 64')
+        }
+        globalSize = input.value
+        clearingAllDivs()
+        gridSizing(globalSize)
+    }
+})
+
+gridSizing(globalSize)
 
 const drawing = ()=>{
+    const div = document.querySelectorAll('div')
     for(let i=0;i<div.length;i++){
         div[i].addEventListener('mouseover',()=>{
             if(click){
@@ -37,6 +61,7 @@ const drawing = ()=>{
 }
 
 const erasing = ()=>{
+    const div = document.querySelectorAll('div')
     for(let i=0;i<div.length;i++){
         div[i].addEventListener('mouseover',()=>{
             if(click){
@@ -48,6 +73,7 @@ const erasing = ()=>{
 }
 
 const rainBowColor = ()=>{
+    const div = document.querySelectorAll('div')
     for(let i=0;i<div.length;i++){
         let r = Math.floor(Math.random() * 255)
         let g = Math.floor(Math.random() * 255)
@@ -62,6 +88,7 @@ const rainBowColor = ()=>{
 }
 
 const resetArt = ()=>{
+    const div = document.querySelectorAll('div')
     for(let i =0; i < div.length; i++){
         div[i].style.backgroundColor = 'white'
     }
@@ -83,6 +110,7 @@ rainbow.addEventListener('click',()=>{
 reset.addEventListener('click',()=>{
     resetArt()
 })
+
 
 
 document.querySelector('body').addEventListener('click',()=>{
