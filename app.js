@@ -4,6 +4,8 @@ const draw = document.querySelector('.draw')
 
 const erase = document.querySelector('.erase')
 
+const rainbow = document.querySelector('.rainbow')
+
 click = true
 
 const gridSizing = (size)=>{
@@ -45,12 +47,30 @@ const erasing = ()=>{
     }
 }
 
+const rainBowColor = ()=>{
+    for(let i=0;i<div.length;i++){
+        let r = Math.floor(Math.random() * 255)
+        let g = Math.floor(Math.random() * 255)
+        let b = Math.floor(Math.random() * 255)
+        div[i].addEventListener('mouseover',()=>{
+            if(click){
+                div[i].style.backgroundColor = `rgb(${r},${g},${b})`
+            }
+        })
+        click = true
+    }
+}
+
 draw.addEventListener('click',()=>{
     drawing()
 })
 
 erase.addEventListener('click',()=>{
     erasing()
+})
+
+rainbow.addEventListener('click',()=>{
+    rainBowColor()
 })
 
 document.querySelector('body').addEventListener('click',()=>{
