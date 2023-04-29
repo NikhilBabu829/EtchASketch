@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-color: #393e41;
     gap: 5%;
 }
 .main{
@@ -30,4 +30,23 @@ body{
 button{
     width: 50%;
     height: 20%;
+    background-color: #e94f37;
+    border: none;
+    border-radius: 20px;
+    color: #f6f7eb;
+}
+h1{
+    color: #e94f37;
+}
+
+input{
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    padding: 0.5%;
+    background-color: #f6f7eb;
+    color: #e94f37;
+}
+input:focus{
+    outline: none;
 }
