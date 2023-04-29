@@ -30,6 +30,7 @@ const drawing = ()=>{
                 div[i].style.backgroundColor = 'black'
             }
         })
+        click = true
     }  
 }
 
@@ -40,6 +41,7 @@ const erasing = ()=>{
                 div[i].style.backgroundColor = 'white'
             }
         })
+        click = true
     }
 }
 
