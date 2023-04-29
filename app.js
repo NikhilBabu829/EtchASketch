@@ -34,6 +34,8 @@ const clearingAllDivs = ()=>{
         d.remove()
     })
 }
+const h1 = document.querySelector('h1')
+h1.innerText = `${globalSize}X${globalSize}`
 
 input.addEventListener('input',()=>{
     if(input.value !== globalSize){
@@ -41,10 +43,14 @@ input.addEventListener('input',()=>{
             return alert('Max Limit is 64')
         }
         globalSize = input.value
+        h1.innerText = `${globalSize}X${globalSize}`
         clearingAllDivs()
         gridSizing(globalSize)
     }
 })
+
+
+
 
 gridSizing(globalSize)
 
