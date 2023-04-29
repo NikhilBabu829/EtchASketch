@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: grey;
+    gap: 5%;
 }
 .main{
     width: 320px;
@@ -28,7 +29,7 @@ div{
     height: 30%;
     display: flex;
     flex-direction: column;
-    gap: 25%;
+    gap: 10%;
 }
 button{
     width: 50%;

@@ -8,6 +8,8 @@ const rainbow = document.querySelector('.rainbow')
 
 const reset = document.querySelector('.reset')
 
+const input = document.querySelector('.inputRange')
+
 click = true
 
 const gridSizing = (size)=>{
@@ -63,6 +65,7 @@ const resetArt = ()=>{
     for(let i =0; i < div.length; i++){
         div[i].style.backgroundColor = 'white'
     }
+    click = true
 }
 
 draw.addEventListener('click',()=>{
@@ -80,6 +83,7 @@ rainbow.addEventListener('click',()=>{
 reset.addEventListener('click',()=>{
     resetArt()
 })
+
 
 document.querySelector('body').addEventListener('click',()=>{
     click = !click
