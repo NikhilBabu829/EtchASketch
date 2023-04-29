@@ -6,6 +6,8 @@ const erase = document.querySelector('.erase')
 
 const rainbow = document.querySelector('.rainbow')
 
+const reset = document.querySelector('.reset')
+
 click = true
 
 const gridSizing = (size)=>{
@@ -20,10 +22,6 @@ const gridSizing = (size)=>{
 gridSizing(16)
 
 const div = document.querySelectorAll('div')
-
-const callBack = (i)=>{
-    div[i].style.backgroundColor = 'black'
-}
 
 const drawing = ()=>{
     for(let i=0;i<div.length;i++){
@@ -61,6 +59,12 @@ const rainBowColor = ()=>{
     }
 }
 
+const resetArt = ()=>{
+    for(let i =0; i < div.length; i++){
+        div[i].style.backgroundColor = 'white'
+    }
+}
+
 draw.addEventListener('click',()=>{
     drawing()
 })
@@ -71,6 +75,10 @@ erase.addEventListener('click',()=>{
 
 rainbow.addEventListener('click',()=>{
     rainBowColor()
+})
+
+reset.addEventListener('click',()=>{
+    resetArt()
 })
 
 document.querySelector('body').addEventListener('click',()=>{
