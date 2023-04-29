@@ -50,3 +50,27 @@ input{
 input:focus{
     outline: none;
 }
+
+@media(max-width:960px){
+    body{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+    }
+    .main{
+        width: 320px;
+        height: 320px;
+    }
+    .contianer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20%;
+    }
+    input{
+        padding: 0.2%;
+        width: 50%;
+        height: 60%;
+    }
+}

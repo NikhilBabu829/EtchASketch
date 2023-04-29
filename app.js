@@ -15,13 +15,13 @@ click = true
 globalSize = 16
 
 const gridSizing = (size)=>{
-    console.log(parseInt(420/size))
+    console.log(main.offsetWidth)
     for(let i=0;i<size;i++){
         for(let j=0;j<size;j++){
             const newDiv = document.createElement('div')
-            newDiv.setAttribute("style",`width : ${parseFloat(420/size)}px`,`height : ${parseFloat(420/size)}px`,"backgroundColor : 'white")
-            newDiv.style.width = `${parseFloat(420/size)}px`
-            newDiv.style.height = `${parseFloat(420/size)}px`
+            newDiv.setAttribute("style",`width : ${parseFloat((420)/size)}px`,`height : ${parseFloat((420)/size)}px`,"backgroundColor : 'white")
+            newDiv.style.width = `${parseFloat((420)/size)}px`
+            newDiv.style.height = `${parseFloat((420)/size)}px`
             newDiv.style.backgroundColor = 'white'
             main.appendChild(newDiv)
         }
