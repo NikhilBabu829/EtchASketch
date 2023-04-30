@@ -34,8 +34,8 @@ const clearingAllDivs = ()=>{
         d.remove()
     })
 }
-const h1 = document.querySelector('h1')
-h1.innerText = `${globalSize}X${globalSize}`
+const h2 = document.querySelector('h2')
+h2.innerText = `${globalSize}X${globalSize}`
 
 input.addEventListener('input',()=>{
     if(input.value !== globalSize){
@@ -43,14 +43,11 @@ input.addEventListener('input',()=>{
             return alert('Max Limit is 64')
         }
         globalSize = input.value
-        h1.innerText = `${globalSize}X${globalSize}`
+        h2.innerText = `${globalSize}X${globalSize}`
         clearingAllDivs()
         gridSizing(globalSize)
     }
 })
-
-
-
 
 gridSizing(globalSize)
 
@@ -116,8 +113,6 @@ rainbow.addEventListener('click',()=>{
 reset.addEventListener('click',()=>{
     resetArt()
 })
-
-
 
 document.querySelector('body').addEventListener('click',()=>{
     click = !click

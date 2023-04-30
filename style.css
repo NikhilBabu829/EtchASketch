@@ -2,7 +2,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -10,6 +9,11 @@ body{
     align-items: center;
     background-color: #393e41;
     gap: 5%;
+}
+h1{
+    position: absolute;
+    top: 1%;
+    color: #e94f37;
 }
 .main{
     width: 420px;
@@ -34,19 +38,26 @@ button{
     border-radius: 20px;
     color: #f6f7eb;
 }
-h1{
+h2{
     color: #e94f37;
 }
 
-input{
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.inputRange{
     border-radius: 20px;
     border: none;
     text-align: center;
-    padding: 0.5%;
+    padding: 2%;
     background-color: #f6f7eb;
     color: #e94f37;
 }
-input:focus{
+.inputRange:focus{
     outline: none;
 }
 
@@ -61,15 +72,26 @@ input:focus{
         width: 320px;
         height: 320px;
     }
+    .inputRange{
+        padding: 0.2%;
+        width: 30%;
+        height: 30%;
+    }
     .container{
         display: flex;
-        align-items: center;
         justify-content: center;
-        gap: 20%;
+        align-items: center;
+        width: 100%;
+        gap: 10%;
     }
-    input{
-        padding: 0.2%;
-        width: 50%;
-        height: 60%;
+    .options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-flow: row wrap;
+        width: 100%;
+    }
+    button{
+        padding: 1%;
     }
 }
