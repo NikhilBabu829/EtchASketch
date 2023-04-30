@@ -14,7 +14,6 @@ body{
 .main{
     width: 420px;
     height: 420px;
-    border: 2px solid gold;
     display: flex;
     flex-flow: row wrap;
     overflow: hidden;
@@ -62,7 +61,7 @@ input:focus{
         width: 320px;
         height: 320px;
     }
-    .contianer{
+    .container{
         display: flex;
         align-items: center;
         justify-content: center;
