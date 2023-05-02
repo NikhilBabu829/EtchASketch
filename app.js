@@ -60,7 +60,37 @@ const drawing = ()=>{
             }
         })
         click = true
-    }  
+    }
+}
+
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+        // if any scroll is attempted, set this to the previous value
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+
+const drawingForScreen = ()=>{
+    const div = document.querySelectorAll('div')
+    const main = document.querySelector('main')
+    for(let i=0;i<div.length;i++){
+        div.forEach(ele => {
+            ele.addEventListener('touchmove', (e)=>{
+                e.preventDefault()
+                disableScroll()
+                const xCoordinates = e.targetTouches[0].clientX
+                const yCoordinates = e.targetTouches[0].clientY
+                const theDiv = document.elementFromPoint(xCoordinates, yCoordinates)
+                // if(ele.offsetTop < yCoordinates && ele.offsetLeft < xCoordinates && ((ele.offsetTop+ele.offsetHeight) > yCoordinates) &&  ((ele.offsetLeft+ele.offsetWidth) > xCoordinates)){
+                theDiv.style.backgroundColor = 'black'
+                // }                    
+            })
+        })
+    }
 }
 
 const erasing = ()=>{
@@ -100,6 +130,7 @@ const resetArt = ()=>{
 
 draw.addEventListener('click',()=>{
     drawing()
+    drawingForScreen()
 })
 
 erase.addEventListener('click',()=>{
