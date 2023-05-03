@@ -75,10 +75,9 @@ function disableScroll() {
 }
 
 const drawingForScreen = ()=>{
-    const div = document.querySelectorAll('div')
-    const main = document.querySelector('main')
-    for(let i=0;i<div.length;i++){
-        div.forEach(ele => {
+    const divs = document.querySelectorAll('div')
+    for(let i=0;i<divs.length;i++){
+        divs.forEach(ele => {
             ele.addEventListener('touchmove', (e)=>{
                 e.preventDefault()
                 disableScroll()
@@ -105,6 +104,24 @@ const erasing = ()=>{
     }
 }
 
+const erasingScreenSize = ()=>{
+    const divs = document.querySelectorAll('div')
+    for(let i=0;i<divs.length;i++){
+        divs.forEach(ele => {
+            ele.addEventListener('touchmove', (e)=>{
+                e.preventDefault()
+                disableScroll()
+                const xCoordinates = e.targetTouches[0].clientX
+                const yCoordinates = e.targetTouches[0].clientY
+                const theDiv = document.elementFromPoint(xCoordinates, yCoordinates)
+                // if(ele.offsetTop < yCoordinates && ele.offsetLeft < xCoordinates && ((ele.offsetTop+ele.offsetHeight) > yCoordinates) &&  ((ele.offsetLeft+ele.offsetWidth) > xCoordinates)){
+                theDiv.style.backgroundColor = 'white'
+                // }                    
+            })
+        })
+    }
+}
+
 const rainBowColor = ()=>{
     const div = document.querySelectorAll('div')
     for(let i=0;i<div.length;i++){
@@ -120,6 +137,27 @@ const rainBowColor = ()=>{
     }
 }
 
+const rainbowForScreenSize = ()=>{
+    const divs = document.querySelectorAll('div')
+    for(let i=0;i<divs.length;i++){
+        divs.forEach(ele => {
+            ele.addEventListener('touchmove', (e)=>{
+                e.preventDefault()
+                disableScroll()
+                let r = Math.floor(Math.random() * 255)
+                let g = Math.floor(Math.random() * 255)
+                let b = Math.floor(Math.random() * 255)
+                const xCoordinates = e.targetTouches[0].clientX
+                const yCoordinates = e.targetTouches[0].clientY
+                const theDiv = document.elementFromPoint(xCoordinates, yCoordinates)
+                // if(ele.offsetTop < yCoordinates && ele.offsetLeft < xCoordinates && ((ele.offsetTop+ele.offsetHeight) > yCoordinates) &&  ((ele.offsetLeft+ele.offsetWidth) > xCoordinates)){
+                theDiv.style.backgroundColor = `rgb(${r},${g},${b})`
+                // }                    
+            })
+        })
+    }
+}
+
 const resetArt = ()=>{
     const div = document.querySelectorAll('div')
     for(let i =0; i < div.length; i++){
@@ -130,6 +168,9 @@ const resetArt = ()=>{
 
 draw.addEventListener('click',()=>{
     drawing()
+})
+
+draw.addEventListener('touchstart',()=>{
     drawingForScreen()
 })
 
@@ -137,8 +178,16 @@ erase.addEventListener('click',()=>{
     erasing()
 })
 
+erase.addEventListener('touchstart', ()=>{
+    erasingScreenSize()
+})
+
 rainbow.addEventListener('click',()=>{
     rainBowColor()
+})
+
+rainbow.addEventListener('touchstart',()=>{
+    rainbowForScreenSize()
 })
 
 reset.addEventListener('click',()=>{
